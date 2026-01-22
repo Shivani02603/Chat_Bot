@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: chat-bot-api
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn scripts.api:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: DB_HOST
+        value: your-database-host
+      - key: DB_PORT
+        value: 5432
+      - key: DB_NAME
+        value: realestate
+      - key: DB_USER
+        value: postgres
+      - key: DB_PASSWORD
+        sync: false
+      - key: HF_TOKEN
+        sync: false
+      - key: CORS_ORIGINS
+        value: "*"
+      - key: REDIS_HOST
+        value: localhost
+      - key: REDIS_PORT
+        value: 6379
