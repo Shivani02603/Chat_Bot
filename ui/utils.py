@@ -8,9 +8,12 @@ import os
 from typing import Optional
 
 # API configuration
-API_HOST = os.getenv("API_HOST", "localhost")
-API_PORT = os.getenv("API_PORT", "8000")
-API_BASE_URL = f"http://{API_HOST}:{API_PORT}"
+# Prefer API_BASE_URL if set, otherwise build from API_HOST and API_PORT
+API_BASE_URL = os.getenv("API_BASE_URL")
+if not API_BASE_URL:
+    API_HOST = os.getenv("API_HOST", "localhost")
+    API_PORT = os.getenv("API_PORT", "8000")
+    API_BASE_URL = f"http://{API_HOST}:{API_PORT}"
 
 
 def upload_excel(file) -> dict:
