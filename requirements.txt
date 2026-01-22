@@ -1,0 +1,43 @@
+# Phase 1: Data Ingestion & Vector Indexing
+
+# Data processing
+pandas
+openpyxl
+
+# Database
+psycopg2-binary
+
+# PDF extraction
+pdfplumber
+
+# Vector store & embeddings
+sentence-transformers
+qdrant-client
+faiss-cpu
+numpy
+scipy
+
+# Configuration
+python-dotenv
+
+# Phase 2: Multi-Agent Chatbot
+
+# API calls & LLM
+requests
+
+# PDF generation & Charts
+matplotlib
+reportlab
+
+# Redis for short-term memory (optional)
+redis
+
+# Phase 3: FastAPI Backend + Streamlit UI
+
+# FastAPI backend
+fastapi
+uvicorn[standard]
+python-multipart
+
+# Streamlit frontend
+streamlit
